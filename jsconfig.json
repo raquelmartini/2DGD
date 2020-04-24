@@ -1,0 +1,10 @@
+{
+    "compilerOptions": {
+        "target": "ES6"
+    },
+    "include": [
+        "engine/**/*", 
+        "splitscreensam/gdgame/**/*", 
+        "temp/**/*", 
+        ] /*added to support Intellisense for JS files outside current file*/
+}

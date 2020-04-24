@@ -1,0 +1,48 @@
+<html>
+
+<head>
+    <title>Introducing An Origin</title>
+    <!-- Reduce the size of this file by moving the CSS out into an external file -->
+    <link rel="stylesheet" type="text/css" href="../../css/rect_styles.css">
+</head>
+<body>
+    <!-- Info header -->
+    <h2><u>Introducing An Origin</u></h2>
+    <h3>The canvas on the left has a rectangle drawn at the center of the left canvas with rectangle origin(0,0)</h3>
+    <h3>The canvas on the right has a rectangle drawn at the center of the right canvas with rectangle origin(width/2,height/2)</h3>
+
+    <!-- Canvases -->
+    <canvas id='game-canvas-left' width='400' height='400'></canvas>
+    <canvas id='game-canvas-right' width='400' height='400'></canvas>
+
+    <!-- JS Script block -->
+    <script>
+        var cvs_left = document.getElementById("game-canvas-left")
+        var ctx_left = cvs_left.getContext("2d");
+        var cvs_right = document.getElementById("game-canvas-right")
+        var ctx_right = cvs_right.getContext("2d");
+
+        //lets do a simple draw of a rectangle at centre of rectangle with origin at (0, 0)
+        ctx_left.beginPath();
+        ctx_left.lineWidth = 1;
+        ctx_left.strokeStyle = "rgb(0, 255, 0)";
+        ctx_left.strokeRect(200, 200, 50, 50);
+
+        //lets add a function and object then draw the rectangle at centre of rectangle with origin at (width/2, height/2)
+        let rect = {x: 200, y:200, width: 50, height: 50, originX: 25, originY: 25};
+        drawRect(ctx_right, rect, 1, "red");
+
+        /*********************************** Functions ***********************************/       
+        
+        function drawRect(ctx, rect, lineWidth, strokeStyle)
+        {
+            ctx.beginPath();
+            ctx.lineWidth = lineWidth;
+            ctx.strokeStyle = strokeStyle;
+            //notice how we offset (x, y) by subtracting the origin (x, y) values
+            ctx.strokeRect(rect.x - rect.originX, rect.x - rect.originX, rect.width, rect.height);
+
+        }
+    </script> 
+    </body>
+</html>

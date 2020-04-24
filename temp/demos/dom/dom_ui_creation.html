@@ -1,0 +1,23 @@
+<html>
+<head>
+  <title>Using DOM manipulation to draw to the canvas and create time based HTML elements</title>
+  <link rel="stylesheet" type="text/css" href="css/dom_ui_creation.css">
+</head>
+
+<body>
+  <!-- images -->
+  <img id="star" src="../../assets/images/demos/UI/Star.png" style="display:none;" />
+
+  <h2><u>Using DOM manipulation to draw to the canvas and create time based HTML elements</u></h2>
+  <h3 id="sub-title"></h3>
+
+  <!-- used by all demos -->
+  <div class="canvas-container" style="position: relative;">
+    <canvas id="canvas-top" class="game-canvas" width=640 height=480></canvas>
+  </div>
+
+  <!-- notice that the script runs AFTER any DOM objects (e.g. div) that it may want to modify -->
+  <script src="js/dom_ui_creation.js"></script>
+</body>
+
+</html>

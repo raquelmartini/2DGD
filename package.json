@@ -1,0 +1,29 @@
+{
+  "name": "2dgd",
+  "version": "1.0.0",
+  "description": "2D Game Development ",
+  "main": "index.html",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/nmcguinness/2DGD.git"
+  },
+  "keywords": [
+    "2D",
+    "Game",
+    "Engine",
+    "JS",
+    "HTML",
+    "CSS",
+    "NodeJS",
+    "MongoDB"
+  ],
+  "author": "niall mcguinness",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/nmcguinness/2DGD/issues"
+  },
+  "homepage": "https://github.com/nmcguinness/2DGD#readme"
+}

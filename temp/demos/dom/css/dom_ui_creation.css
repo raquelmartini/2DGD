@@ -1,0 +1,182 @@
+/********************************************************** Demos 1 - 6 **********************************************************/
+.canvas-container,
+.game-canvas {
+  position: absolute;
+  top: 10px;
+  left: 50%;
+  width: 640px;
+  /* CANVAS SPECIFIC SIZE - SET <CANVAS> TAG IN HTML TO SAME SIZE */
+  height: 480px;
+  /* CANVAS SPECIFIC SIZE - SET <CANVAS> TAG IN HTML TO SAME SIZE */
+  margin-left: -320;
+  z-index: 1;
+}
+
+.game-canvas {
+  display: block;
+  border: 1px solid black;
+  background-color: #c9cb634b;
+}
+
+/********************************************************** Demo 5 - pulse & fadein **********************************************************/
+.ui-info-player,
+.ui-info-score,
+.ui-info-inventory {
+  position: absolute;
+  color: white;
+  font-family: Impact, Charcoal, sans-serif;
+  font-size: 1.2em;
+}
+
+.ui-info-player {
+  left: 5%;
+  top: 5%;
+  background-color: red;
+  border-width: 2px;
+  border-style: dashed;
+  border-color: black;
+  border-radius: 5px;
+  padding: 5;
+  /*https://css-tricks.com/almanac/properties/a/animation/*/
+  animation-name: pulse;
+  animation-duration: 2s;
+  animation-timing-function: ease-in;
+  animation-delay: 1s;
+  animation-direction: alternate;
+  animation-iteration-count: infinite;
+}
+
+@keyframes pulse {
+  0% {
+    transform: scale(1.0);
+
+  }
+
+  100% {
+    transform: scale(1.25);
+  }
+}
+
+.ui-info-score {
+  top: 5%;
+  right: 5%;
+  width: 120px;
+  text-align: center;
+  color: black;
+  letter-spacing: 2px;
+  padding: 5 5 5 5;
+  background-color: rgb(219, 216, 22);
+
+  /*https://css-tricks.com/almanac/properties/a/animation/*/
+  animation-name: fadein;
+  animation-duration: 4s;
+  animation-timing-function: ease-in;
+  animation-delay: 0s;
+  animation-direction: alternate;
+  animation-iteration-count: 1;
+}
+
+@keyframes fadein {
+  0% {
+    opacity: 0;
+  }
+
+  100% {
+    opacity: 1;
+  }
+}
+
+.ui-info-inventory {
+  bottom: 15%;
+  left: 5%;
+  padding: 5 5 5 5;
+  color: rgb(255, 255, 255);
+  background-color: rgb(13, 98, 195);
+  list-style-type: circle;
+
+  /*https://css-tricks.com/almanac/properties/a/animation/*/
+  animation-name: slidein;
+  animation-duration: 2s;
+  animation-timing-function: ease-in;
+  animation-delay: 0s;
+  animation-direction: alternate;
+  animation-iteration-count: 1;
+}
+
+@keyframes slidein {
+  0% {
+    max-width: 0px;
+  }
+
+  100% {
+    max-width: 100%;
+  }
+}
+
+/********************************************************** Demo 5 - Shimmer **********************************************************/
+/*https://webdevtrick.com/pure-css-shimmer-text-effect/*/
+.ui-info-goal {
+  position: absolute;
+  bottom: 5%;
+  left: 5%;
+  font-family: Impact, Charcoal, sans-serif;
+  font-size: 1.2em;
+  margin: 0 auto;
+  padding: 0 140px 0 0;
+  display: inline;
+  text-align: center;
+  color: rgba(255,255,255,0.1);
+  background: -webkit-gradient(linear, left top, right top, from(#222), to(#222), color-stop(0.5, #fff));
+  background: -moz-gradient(linear, left top, right top, from(#222), to(#222), color-stop(0.5, #fff));
+  background: gradient(linear, left top, right top, from(#222), to(#222), color-stop(0.5, #fff));
+  -webkit-background-size: 125px 100%;
+  -moz-background-size: 125px 100%;
+  background-size: 125px 100%;
+  -webkit-background-clip: text;
+  -moz-background-clip: text;
+  background-clip: text;
+  -webkit-animation-name: shimmer;
+  -moz-animation-name: shimmer;
+  animation-name: shimmer;
+  -webkit-animation-duration: 2s;
+  -moz-animation-duration: 2s;
+  animation-duration: 2s;
+  -webkit-animation-iteration-count: infinite;
+  -moz-animation-iteration-count: infinite;
+  animation-iteration-count: infinite;
+  background-repeat: no-repeat;
+  background-position: 0 0;
+  background-color: #222;
+}
+@-moz-keyframes shimmer {
+  0% {
+    background-position: top left;
+  }
+  100% {
+    background-position: top right;
+  }
+}
+@-webkit-keyframes shimmer {
+  0% {
+    background-position: top left;
+  }
+  100% {
+    background-position: top right;
+  }
+}
+@-o-keyframes shimmer {
+  0% {
+    background-position: top left;
+  }
+  100% {
+    background-position: top right;
+  }
+}
+@keyframes shimmer {
+  0% {
+    background-position: top left;
+  }
+  100% {
+    background-position: top right;
+  }
+}

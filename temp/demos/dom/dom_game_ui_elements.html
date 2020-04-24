@@ -1,0 +1,35 @@
+<html>
+<head>
+  <title>Using margin-left, margin-right, z-index and custom properties to position and time a loader animation</title>
+  <link rel="stylesheet" type="text/css" href="css/dom_game_ui_elements.css">
+</head>
+
+<body>
+
+  <!--
+    Note:
+    - The z-index set to ensure that each element is drawn in the correct order.
+    - The use of left: 50% or top: 50% to center an element vertically and/or horizontally AND the use of margin-left and margin-top with negative values to properly center the element.
+    - The use of custom properties to pass the loader width, height, and animation duration to the corresponding .loader css style in dom_ui_creation.css
+      see https://css-tricks.com/css-attr-function-got-nothin-custom-properties/
+  -->
+
+  <h2><u>Using margin-left, margin-right, z-index and custom properties to position and time a loader animation</u></h2>
+  <h3 id="sub-title"></h3>
+
+  <!-- used by all demos -->
+  <div class="canvas-container" style="position: relative;"> 
+    <!-- We will add all the element below through JS see Demo1() in the associated file -->
+    <!--
+    <canvas id="canvas-top" class="game-canvas" width=640 height=480 style="z-index: 1;"></canvas>
+    <div style="position:absolute; top: 5%; left: 50%; z-index: 2; margin-left: -50;">Score: 5/10</div>
+    <div class="loader" style="position:absolute; top: 50%; left: 50%; margin-top: -100; margin-left: -100; --loader-width: 200px; --loader-height: 200px; --loader-spin-duration: 1s; z-index: 3;"></div>
+    -->
+  </div>
+
+
+  <!-- notice that the script runs AFTER any DOM objects (e.g. div) that it may want to modify -->
+  <script src="js/dom_game_ui_elements.js"></script>
+</body>
+
+</html>

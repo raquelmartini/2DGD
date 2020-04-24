@@ -1,0 +1,64 @@
+<html>
+
+<head>
+    <title>Draw Primitives</title>
+    <style>
+        #game-canvas-left,
+        #game-canvas-right {
+            position: absolute;
+            width: 400px;
+            height: 400px;
+            border: 1px solid blue;
+        }
+
+        #game-canvas-left {
+            background-color:  rgb(253, 236, 236);
+            z-index: 1;
+        }
+
+        #game-canvas-right {
+            left: 400;  /*comment this line out to see what happens to the RHS canvas*/
+            background-color:rgb(237, 250, 236);
+            z-index: 2;
+        }
+    </style>
+</head>
+<body>
+    <h2><u>Draw Primitives</u></h2>
+    <h3>The canvas on the left has a rectangle drawn at (200, 200)</h3>
+    <h3>The canvas on the right has a rectangle drawn at (70, 70)</h3>
+
+    <canvas id='game-canvas-left' width='400' height='400'></canvas>
+    <canvas id='game-canvas-right' width='400' height='400'></canvas>
+
+    <script>
+        var cvs_left = document.getElementById("game-canvas-left");
+        var ctx_left = cvs_left.getContext("2d");
+        var cvs_right = document.getElementById("game-canvas-right");
+        var ctx_right = cvs_right.getContext("2d");
+
+        //lets do a simple draw of a rectangle at centre of rectangle with origin at (0, 0)
+        ctx_left.beginPath();
+        ctx_left.lineWidth = 1;
+        ctx_left.strokeStyle = "rgb(0, 255, 0)";
+        ctx_left.strokeRect(200, 200, 50, 50);
+
+        //lets add a function and draw the rectangle at (70, 70)
+        DrawRect(ctx_right, 70, 70, 80, 50, 2, "#ff0000");
+
+        /*********************************** Functions ***********************************/       
+  
+        function DrawRect(ctx, x, y, w, h, lineWidth, strokeStyle)
+        {
+            ctx.beginPath();
+            ctx.lineWidth = lineWidth;
+            ctx.strokeStyle = strokeStyle;
+            ctx.rect(x, y, w, h);
+            ctx.stroke();
+        }
+
+    </script> 
+</body>
+
+
+</html>

@@ -1,0 +1,12 @@
+/*Deliberately empty until we decide what styling we need...*/
+
+.info-msg{
+    position: absolute; 
+    top: 50px; 
+    left: 250px; 
+    color: red;
+    font-size: 24pt;
+    /*we need to work out the text width so we can use margin-left to center it exactly (e.g. margin-left: -50px)*/
+    margin-left: -20px; /*20px is half the width of the text*/
+    text-shadow: 1px 1px rgb(114, 0, 0);
+}
